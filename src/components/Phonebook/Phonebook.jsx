@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import faker from "faker";
-import ContactForm from "../ContactForm/ContactForm";
-import ContactList from "../ContactList/ContactList";
+import { ContactForm } from "../ContactForm";
+import { ContactList } from "../ContactList";
 import Filter from "../Filter/Filter";
 import "./Phonebook.scss";
 
@@ -67,7 +67,6 @@ export default class Phonebook extends Component {
 
   render() {
     const filteredNames = this.getFilteredContacts();
-    console.log(`filtered`, filteredNames);
     return (
       <div className="content">
         <h1>Phonebook</h1>

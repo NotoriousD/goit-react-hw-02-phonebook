@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./contactlist.module.css";
+import PropTypes from "prop-types";
 import { CSSTransition } from "react-transition-group";
 
 const ContactList = ({ contacts, onDelete }) => (
@@ -20,5 +21,16 @@ const ContactList = ({ contacts, onDelete }) => (
     ))}
   </ul>
 );
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
+  onDelete: PropTypes.func,
+};
 
 export default ContactList;
